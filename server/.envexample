@@ -1,2 +1,13 @@
 PORT=3001
+CLIENT_URL="http..."
+API_URL="http..."
+
 MONGOURL="mongodb+srv://..."
+
+JWT_ACCESS_SECRET="ra47s65d06kj3djJF5jbbg"
+JWT_REFRESH_SECRET="ra47s65d06kj3djJF5jbbg"
+
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT=587
+SMTP_USER="login@gmail.com"
+SMTP_PASS="SMTPpassword"
