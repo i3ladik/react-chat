@@ -1,0 +1,33 @@
+@import '../../utils/colors.less';
+
+.registration{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    background-color: @header-bg-color;
+    border-radius: 20px;
+    padding: 20px;
+    align-self: center;
+    margin-top: 200px;
+
+    &_header{
+        font-size: 30px;
+        color: @font-color;
+        font-weight: bold;
+    }
+
+    input{
+        margin: 10px 20px;
+    }
+
+    &_btn {
+        border: none;
+        background-color: @font-color;
+        border-radius: 10px;
+        color: @bg-color;
+        padding: 5px 10px;
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+}
