@@ -12,7 +12,7 @@ class UserController {
             const { email, password } = req.body;
             const userData = await userService.registration(email, password);
             res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
-            return res.json(userData);
+            return res.json({ message: 'User has been successfully created. Confirm your email', ...userData });
 
         }
         catch (e) { next(e); }
@@ -23,7 +23,7 @@ class UserController {
             const { email, password } = req.body;
             const userData = await userService.login(email, password);
             res.cookie('refreshToken', userData.refreshToken, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true });
-            return res.json(userData);
+            return res.json({ message: 'Login successful', ...userData });
         }
         catch (e) { next(e); }
     }
@@ -31,9 +31,9 @@ class UserController {
     async logout(req, res, next) {
         try {
             const { refreshToken } = req.cookies;
-            const token = await userService.logout(refreshToken);
+            await userService.logout(refreshToken);
             res.clearCookie('refreshToken');
-            return res.json(token);
+            return res.json({ message: 'Logout successful' });
         }
         catch (e) { next(e); }
     }
@@ -59,7 +59,7 @@ class UserController {
 
     async test(req, res, next) {
         try {
-            res.json([1, 2, 3]);
+            res.json('You are logged in');
         }
         catch (e) { next(e); }
     }
