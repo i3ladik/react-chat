@@ -19,7 +19,7 @@ const Navbar = () => {
                 {!isAuth && <div className='navbar_login'><NavLink to='/login'>Sign In</NavLink></div>}
                 {!isAuth && <div className='navbar_register'><NavLink to='/registration'>Sign Up</NavLink></div>}
                 {isAuth && <div className='navbar_login' onClick={() => dispatch(logout())}>Sign Out</div>}
-                {isAuth && <div className='navbar_test' onClick={() => test()}>Test</div>}
+                {isAuth && <div className='navbar_register' onClick={() => test()}>Test</div>}
             </div>
         </div>
     );

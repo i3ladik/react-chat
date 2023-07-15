@@ -4,9 +4,13 @@
   height: 65px;
   border-radius: 20px;
   background-color: #1c1c1c;
-  width: 100%;
+  width: calc(100% - 10px);
+}
+.navbar a {
+  text-decoration: none;
 }
 .navbar_logo {
+  margin-left: 20px;
   height: 40px;
   width: 40px;
 }
@@ -16,15 +20,33 @@
   font-weight: bold;
   text-transform: none;
 }
-.navbar_header a {
-  text-decoration: none;
-}
 .navbar_login {
   margin-left: auto;
   padding-right: 20px;
+  cursor: pointer;
+}
+.navbar_register {
+  cursor: pointer;
+  margin-right: 20px;
 }
 .container {
   width: 1140px;
   display: flex;
   align-items: center;
+  max-width: 1400px;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
 }
