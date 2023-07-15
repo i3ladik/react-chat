@@ -16,9 +16,9 @@ const Navbar = () => {
             <div className='container'>
                 <NavLink to='/'><img src={Logo} alt='logo' className='navbar_logo' /></NavLink>
                 <div className='navbar_header'><NavLink to='/'>Chat</NavLink></div>
-                {!isAuth && <div className='navbar_login'><NavLink to='/login'>Login</NavLink></div>}
-                {!isAuth && <div className='navbar_register'><NavLink to='/registration'>Registration</NavLink></div>}
-                {isAuth && <div className='navbar_login' onClick={() => dispatch(logout())}>Logout</div>}
+                {!isAuth && <div className='navbar_login'><NavLink to='/login'>Sign In</NavLink></div>}
+                {!isAuth && <div className='navbar_register'><NavLink to='/registration'>Sign Up</NavLink></div>}
+                {isAuth && <div className='navbar_login' onClick={() => dispatch(logout())}>Sign Out</div>}
                 {isAuth && <div className='navbar_test' onClick={() => test()}>Test</div>}
             </div>
         </div>

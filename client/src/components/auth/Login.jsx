@@ -12,10 +12,10 @@ const Login = () => {
 
     return (
         <div className='login'>
-            <div className='login_header'>Login</div>
+            <div className='login_header'>Sign In</div>
             <Input value={email} setValue={setEmail} type='text' placeholder='Email' />
             <Input value={password} setValue={setPassword} type='password' placeholder='Password' />
-            <button className='login_btn' onClick={() => dispatch(login(email, password))}>Enter</button>
+            <button className='login_btn' onClick={() => dispatch(login(email, password))}>Sign In</button>
         </div>
     );
 };
