@@ -4,7 +4,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 const $api = axios.create({
     withCredentials: true,
-    baseURL: process.env.REACT_APP_API_URL + '/api'
+    baseURL: 'https://' + API_URL + '/api'
 });
 
 $api.interceptors.request.use((config) => {
