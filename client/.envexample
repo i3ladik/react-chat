@@ -1,2 +1,2 @@
 PORT=3000
-REACT_APP_API_URL="http..."
+REACT_APP_API_URL="example.com"
