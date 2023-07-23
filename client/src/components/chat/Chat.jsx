@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import './chat.css';
@@ -11,12 +11,12 @@ const Chat = () => {
 
     let messages = [];
     while (messages.length < 20) messages.push({ name: 'Tester', text: 'test' });
+    useEffect(() => {
+        const list = document.getElementsByClassName('chat_window_messages_list');
+        list.item(0).scrollTop = list.item(0).offsetHeight;
+        console.log(list.item(0).offsetHeight);
 
-    const AlwaysScrollToBottom = () => {
-        const elementRef = useRef();
-        useEffect(() => elementRef.current.scrollIntoView());
-        return <div ref={elementRef} />;
-    };
+    }, []);
 
     return (
         <div className='chat'>
@@ -27,12 +27,10 @@ const Chat = () => {
                             {messages.map((message, index) => (
                                 <Li key={index} name={message.name} text={message.text} />
                             ))}
-                            <AlwaysScrollToBottom />
                         </ul>
                     </div>
                     {
                         isAuth &&
-
                         <div className='chat_window_typing'>
                             <Input value={text} setValue={setText} type='text' placeholder='Enter the text here' />
                             <button className='chat_window_typing_button'>Send</button>
