@@ -1,20 +1,18 @@
 @import '../colors.less';
 
-input {
+.customInput {
     border: none;
     border-bottom: white solid 3px;
     color: @font-color;
     background-color: @bg-color;
     width: 100%;
 
-    &::placeholder{
+    &::placeholder {
         color: @font-color;
     }
 
-    &:focus{
+    &:focus {
         outline: none;
         transform: scale(1.02);
     }
-
-    
 }
