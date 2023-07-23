@@ -7,6 +7,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #1b1116;
+  overscroll-behavior: none;
 }
 #root {
   width: 100%;
@@ -15,9 +16,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.wrap {
+.container {
   width: 1140px;
+  max-width: 1140px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
 }

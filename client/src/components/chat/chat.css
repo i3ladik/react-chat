@@ -1,0 +1,64 @@
+.chat {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 10px);
+}
+.chat_window {
+  overflow: visible;
+  width: 100%;
+  height: calc(100vh - 105px);
+  border-radius: 20px;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chat_window_messages {
+  background-color: #1b1116;
+  border-radius: 15px;
+  width: calc(100% - 40px);
+  height: calc(100% - 125px);
+}
+.chat_window_messages_list {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  overflow-y: auto;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.chat_window_messages_list::-webkit-scrollbar {
+  width: 8px;
+}
+.chat_window_messages_list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+.chat_window_messages_list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+.chat_window_typing {
+  margin-top: 40px;
+  background-color: #1b1116;
+  border-radius: 15px;
+  width: calc(100% - 40px);
+  height: 45px;
+  display: flex;
+  justify-content: center;
+}
+.chat_window_typing input {
+  border-radius: 15px;
+  margin: 0 10px;
+}
+.chat_window_typing_button {
+  margin: 5px;
+  width: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  color: #1b1116;
+  cursor: pointer;
+}

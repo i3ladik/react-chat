@@ -1,0 +1,75 @@
+@import '../../utils/colors.less';
+
+.chat {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 10px);
+
+    &_window {
+        overflow: visible;
+        width: 100%;
+        height: calc(100vh - 105px);
+        border-radius: 20px;
+        background-color: @header-bg-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &_messages {
+            background-color: @bg-color;
+            border-radius: 15px;
+            width: calc(100% - 40px);
+            height: calc(100% - 125px);
+
+            &_list {
+                height: 100%;
+                width: 100%;
+                list-style: none;
+                overflow-y: auto;
+                overflow: auto;
+                scrollbar-width: thin;
+            }
+
+            &_list::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            &_list::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 4px;
+            }
+
+            &_list::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+                cursor: pointer;
+            }
+        }
+
+        &_typing {
+            margin-top: 40px;
+            background-color: @bg-color;
+            border-radius: 15px;
+            width: calc(100% - 40px);
+            height: 45px;
+            display: flex;
+            justify-content: center;
+
+            input {
+                border-radius: 15px;
+                margin: 0 10px;
+            }
+
+            &_button {
+                margin: 5px;
+                width: 40px;
+                border: none;
+                background-color: @font-color;
+                border-radius: 10px;
+                color: @bg-color;
+                cursor: pointer;
+            }
+        }
+    }
+}

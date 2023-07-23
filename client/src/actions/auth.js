@@ -28,6 +28,7 @@ export const login = (email, password) => {
             if(!response.data.user.isVerif) return alert('Confirm your email!');
             dispatch(setUser(response.data.user));
             localStorage.setItem('token', response.data.accessToken);
+            return true;
         } catch (e) { alert(e.response.data.message); }
     }
 };

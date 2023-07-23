@@ -6,6 +6,7 @@ import './app.css';
 import Navbar from './navbar/Navbar.jsx';
 import Registration from './auth/Registration.jsx';
 import Login from './auth/Login.jsx';
+import Chat from './chat/Chat.jsx';
 import { auth } from "../actions/auth.js";
 
 function App() {
@@ -20,14 +21,11 @@ function App() {
         <BrowserRouter>
             <div className='app'>
                 <Navbar />
-                <div className='wrap'>
-                    {!isAuth &&
-                        <Routes>
-                            <Route path='/registration' element={<Registration />} />
-                            <Route path='/login' element={<Login />} />
-                        </Routes>
-                    }
-                </div>
+                <Routes>
+                    <Route path='/' element={<Chat />} />
+                    {!isAuth && <Route path='/registration' element={<Registration />} />}
+                    {!isAuth && <Route path='/login' element={<Login />} />}
+                </Routes>
             </div>
         </BrowserRouter>
     );

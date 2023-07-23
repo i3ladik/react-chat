@@ -10,6 +10,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: @bg-color;
+    // overflow: hidden;
+    overscroll-behavior: none;
 }
 
 #root {
@@ -20,10 +22,31 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.wrap{
+.container {
     width: 1140px;
+    max-width: 1140px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
 }
