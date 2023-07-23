@@ -1,0 +1,13 @@
+.customLi {
+  margin: 10px auto;
+  min-height: 35px;
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #1c1c1c;
+  padding: 0 10px;
+}
+.customLi span {
+  font-weight: bold;
+}
