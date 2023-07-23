@@ -6,12 +6,14 @@ import md5 from 'md5';
 import './navbar.css';
 import Logo from '../../assets/img/logo.svg';
 import avatar from '../../assets/img/avatar.svg';
-import { logout, test } from '../../actions/auth.js';
+import { logout } from '../../actions/auth.js';
 
 const Navbar = () => {
     const isAuth = useSelector((state) => state.user.isAuth);
     const user = useSelector((state) => state.user.currentUser);
     const dispatch = useDispatch();
+
+    const gravatarRedir = () => window.open('https://gravatar.com/', '_blank');
 
     return (
         <div className='navbar'>
@@ -23,7 +25,7 @@ const Navbar = () => {
                 {isAuth && <div className='navbar_login' onClick={() => dispatch(logout())}>Sign Out</div>}
                 {
                     isAuth &&
-                    <div className='navbar_avatar' style={{ backgroundImage: `url(${avatar})` }} onClick={() => test()} >
+                    <div className='navbar_avatar' style={{ backgroundImage: `url(${avatar})` }} onClick={gravatarRedir} >
                         <img className='navbar_avatar' src={`https://www.gravatar.com/avatar/${md5(user.email)}`} alt='avatar' />
                     </div>
                 }
