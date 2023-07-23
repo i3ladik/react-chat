@@ -13,12 +13,13 @@ export const auth = () => {
     }
 };
 
-export const registration = async (email, password) => {
+export const registration = async (email, password, nickname) => {
     try {
-        const response = await AuthService.registration(email, password);
+        const response = await AuthService.registration(email, password, nickname);
         alert(response.data.message);
+        return true;
     }
-    catch (e) { alert(e.response.data.message); }
+    catch (e) { alert(e.response.data.message); return false; }
 };
 
 export const login = (email, password) => {
@@ -41,11 +42,4 @@ export const logout = () => {
             localStorage.removeItem('token');
         } catch (e) { alert(e.response.data.message); }
     }
-};
-
-export const test = async () => {
-    try {
-        const response = await AuthService.test();
-        alert(response.data);
-    } catch (e) { alert(e.response.data.message); }
 };

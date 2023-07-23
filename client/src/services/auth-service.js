@@ -1,8 +1,8 @@
 import $api from '../http/api';
 
 export class AuthService {
-    async registration(email, password) {
-        return await $api.post('/auth/registration', { email, password });
+    async registration(email, password, nickname) {
+        return await $api.post('/auth/registration', { email, password, nickname });
     }
 
     async login(email, password) {

@@ -8,13 +8,15 @@ const UserDto = require('../dtos/user-dto.js');
 const ApiError = require('../exeptions/api-error.js');
 
 class UserService {
-    async registration(email, password) {
-        const checkUser = await userModel.findOne({ email });
+    async registration(email, password, nickname) {
+        let checkUser = await userModel.findOne({ email });
         if (checkUser) throw ApiError.BadRequest(`User with email ${email} already exists`);
+        checkUser = await userModel.findOne({ nickname });
+        if (checkUser) throw ApiError.BadRequest(`User with nickname ${nickname} already exists`);
 
         const hashPassword = bcryptjs.hashSync(password);
         const verifLink = uuid.v4();
-        const user = await userModel.create({ email, password: hashPassword, verifLink });
+        const user = await userModel.create({ email, password: hashPassword, nickname, verifLink });
         await mailService.sendVerify(email, `${process.env.API_URL}/api/auth/verify/${verifLink}`);
 
         const userDto = new UserDto(user);
