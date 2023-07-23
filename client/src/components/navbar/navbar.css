@@ -30,6 +30,7 @@
   margin-right: 20px;
 }
 .navbar_avatar {
+  cursor: pointer;
   margin-right: 20px;
   width: 40px;
   height: 40px;
