@@ -30,7 +30,6 @@ app.get('/api/ws', (req, res) => {
 
 //client
 if (process.env.NODE_ENV !== 'development') {
-    process.env.CLIENT_URL = process.env.API_URL;
     app.use(express.static(path.resolve(__dirname, '../client/build')));
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/build/index.html'));

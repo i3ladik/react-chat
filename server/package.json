@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "cross-env NODE_ENV=development nodemon index.js"
+    "dev": "cross-env NODE_ENV=development CLIENT_URL=\"http://localhost:3001\" API_URL=\"http://localhost:3000/api\" nodemon index.js"
   },
   "author": "i3ladik",
   "license": "MIT",

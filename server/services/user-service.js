@@ -17,7 +17,7 @@ class UserService {
         const hashPassword = bcryptjs.hashSync(password);
         const verifLink = uuid.v4();
         const user = await userModel.create({ email, password: hashPassword, nickname, verifLink });
-        await mailService.sendVerify(email, `${process.env.API_URL}/api/auth/verify/${verifLink}`);
+        await mailService.sendVerify(email, `${process.env.API_URL}/auth/verify/${verifLink}`);
 
         const userDto = new UserDto(user);
         const tokens = tokenService.generateTokens({ ...userDto });

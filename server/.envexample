@@ -1,6 +1,6 @@
 PORT=3001
-CLIENT_URL="http..."
-API_URL="http..."
+CLIENT_URL="https://example.com"
+API_URL="https://example.com/api"
 
 MONGOURL="mongodb+srv://..."
 
