@@ -7,7 +7,7 @@ const router = new Router();
 
 router.post('/message',
     authMiddleware,
-    body('message').isLength({ min: 1, max: 200 }),
+    body('message').isLength({ min: 1, max: 512 }),
     messageController.message
 );
 router.get('/messages', messageController.getMessages);

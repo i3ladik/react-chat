@@ -49,9 +49,18 @@
   display: flex;
   justify-content: center;
 }
-.chat_window_typing input {
-  border-radius: 15px;
+.chat_window_typing_input {
+  color: white;
+  background-color: #1b1116;
+  width: 100%;
+  border: none;
   margin: 0 10px;
+}
+.chat_window_typing_input::placeholder {
+  color: white;
+}
+.chat_window_typing_input:focus {
+  outline: none;
 }
 .chat_window_typing_button {
   margin: 5px;

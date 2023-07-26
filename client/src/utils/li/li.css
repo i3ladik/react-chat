@@ -1,13 +1,21 @@
 .customLi {
-  margin: 10px auto;
+  margin: 10px;
+  padding: 10px;
   min-height: 35px;
   width: calc(100% - 20px);
   border-radius: 5px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background-color: #1c1c1c;
-  padding: 0 10px;
 }
-.customLi span {
+.customLi_message {
+  word-wrap: break-word;
+}
+.customLi_message_nickName {
   font-weight: bold;
+}
+.customLi_timestamp {
+  margin-left: auto;
+  font-size: 10px;
+  color: gray;
 }

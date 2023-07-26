@@ -1,18 +1,25 @@
 @import '../colors.less';
 
-.customLi{
-    margin: 10px auto;
+.customLi {
+    margin: 10px;
+    padding: 10px;
     min-height: 35px;
     width: calc(100% - 20px);
     border-radius: 5px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     background-color: @header-bg-color;
-    padding: 0 10px;
 
-    
-    span{
-        // margin: 0 10px;
-        font-weight: bold;
+    &_message {
+        word-wrap: break-word;
+        &_nickName {
+            font-weight: bold;
+        }
+    }
+
+    &_timestamp {
+        margin-left: auto;
+        font-size: 10px;
+        color: gray;
     }
 }

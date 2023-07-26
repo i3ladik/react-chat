@@ -19,7 +19,7 @@ export const registration = async (email, password, nickname) => {
         alert(response.data.message);
         return true;
     }
-    catch (e) { alert(e.response.data.message); return false; }
+    catch (e) { alert(JSON.stringify(e.response.data, null, 4)); return false; }
 };
 
 export const login = (email, password) => {

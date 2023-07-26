@@ -56,9 +56,20 @@
             display: flex;
             justify-content: center;
 
-            input {
-                border-radius: 15px;
+            &_input {
+                color: @font-color;
+                background-color: @bg-color;
+                width: 100%;
+                border: none;
                 margin: 0 10px;
+
+                &::placeholder {
+                    color: @font-color;
+                }
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             &_button {

@@ -20,21 +20,28 @@
   font-weight: bold;
   text-transform: none;
 }
-.navbar_login {
+.navbar_loginout {
   margin-left: auto;
-  padding-right: 20px;
+  padding-right: 10px;
   cursor: pointer;
 }
 .navbar_register {
+  margin-right: 10px;
   cursor: pointer;
-  margin-right: 20px;
 }
 .navbar_avatar {
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 100%;
   background-size: cover;
   background-position: center;
+}
+.navbar_github {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  text-transform: none;
+  cursor: pointer;
 }
